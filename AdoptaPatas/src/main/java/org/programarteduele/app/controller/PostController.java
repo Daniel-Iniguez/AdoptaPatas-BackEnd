@@ -60,6 +60,7 @@ public class PostController {
 		return "Se eliminó el usuario id " + id;
 	}
 	
+	
 	@GetMapping("/user-post/{userId}")
     public List<Post> getCommentsByPostId(@PathVariable Long userId) {
         return postService.getPostsByUserId(userId);
