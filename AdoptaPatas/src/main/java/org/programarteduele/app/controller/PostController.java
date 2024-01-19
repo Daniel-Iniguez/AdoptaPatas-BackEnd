@@ -2,6 +2,7 @@ package org.programarteduele.app.controller;
 
 import java.util.List;
 
+import org.programarteduele.app.entity.Comment;
 import org.programarteduele.app.entity.Post;
 import org.programarteduele.app.entity.User;
 import org.programarteduele.app.service.PostService;
@@ -58,5 +59,10 @@ public class PostController {
 		postService.deletePost(id);
 		return "Se eliminó el usuario id " + id;
 	}
+	
+	@GetMapping("/user-post/{userId}")
+    public List<Post> getCommentsByPostId(@PathVariable Long userId) {
+        return postService.getPostsByUserId(userId);
+    }
 
 }

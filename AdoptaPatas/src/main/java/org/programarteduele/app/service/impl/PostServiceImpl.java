@@ -2,6 +2,7 @@ package org.programarteduele.app.service.impl;
 
 import java.util.List;
 
+import org.programarteduele.app.entity.Comment;
 import org.programarteduele.app.entity.Post;
 import org.programarteduele.app.entity.User;
 import org.programarteduele.app.repository.PostRepository;
@@ -48,6 +49,11 @@ public class PostServiceImpl implements PostService {
 		existingPost.setActive(false);
 		postRepository.save(existingPost);		
 	}
+	
+	@Override
+    public List<Post> getPostsByUserId(Long userId) {
+        return postRepository.findByUserId(userId);
+    }
 	
 
 }
